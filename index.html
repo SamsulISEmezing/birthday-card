@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Card</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #48cae4, #90e0ef, #ade8f4, #caf0f8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1.title {
+            color: #FFD700;
+            text-shadow: 2px 2px 0px transparent, -2px -2px 0px transparent;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #1E1E2F;
+            border-radius: 15px;
+            padding: 20px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card h1, .card p, .footer p {
+            color: #FFD700;
+            text-shadow: none;
+        }
+
+        .card h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .card p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .image-container {
+            margin-left: 20px;
+        }
+
+        .birthday-cake {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #FFFFFF;
+        }
+
+        .video-button {
+            background-color: #FFD700;
+            color: #1E1E2F;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #1E1E2F;
+            margin: 15% auto;
+            padding: 20px;
+            border: none;
+            width: 80%;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #FFFFFF;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #FFD700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">HAPPY BIRTHDAY SAYANGGG</h1>
+    <div class="card">
+        <div>
+            <h1>Happy Birthday!</h1>
+            <p>I Love You</p>
+            <p>- Pacarnya Misel</p>
+        </div>
+        <div class="image-container">
+            <img src="imut.jpg" alt="Birthday Cake" class="birthday-cake">
+        </div>
+        <div class="footer">
+            <p>Made with <span style="color: red;">&#10084;</span> by Pacarnya Misel</p>
+        </div>
+    </div>
+    <button class="video-button" id="openModal">Watch Video</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <video controls>
+                <source src="ultahmisel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModal");
+        var span = document.getElementById("closeModal");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
